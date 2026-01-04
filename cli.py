@@ -1,4 +1,9 @@
+import time
 from functions import get_todos, write_todos
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print(f"It is {now}")
+
 while True:
     user_action = input("Enter display, add, complete, edit or exit:").strip()
 
