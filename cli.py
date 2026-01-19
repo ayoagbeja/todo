@@ -27,7 +27,7 @@ while True:
                 new_todo = input("What would you like to do instead?") + "\n"
                 todos[index] = new_todo
 
-                write_todos('todos.txt', todos)
+                write_todos(todo_args = todos , filepath ='todos.txt')
             else:
                 print("That todo does not exist.")
 
@@ -51,7 +51,7 @@ while True:
     elif  user_action.startswith("complete"):
         try:
             number = int(input("What number of todo would you like to complete?"))
-            no_index = number-1
+            no_index = number - 1
 
             todos = get_todos()
 
@@ -59,7 +59,7 @@ while True:
                 todo_removed = todos[no_index]
                 todos.pop(no_index)
 
-                write_todos('todos.txt', todos)
+                write_todos(todo_args = todos , filepath ='todos.txt')
                 print(f'Todo {todo_removed.strip("\n")} has been removed')
 
             else:
